@@ -1,0 +1,555 @@
+.map-container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.map-background {
+    width: 100%;
+    display: block;
+}
+/*  Admissions Office */
+.node:nth-of-type(1) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 28px;
+    left: 325px;
+}
+/* Bookstore/Titan Shop */
+.node:nth-of-type(2) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 185px;
+    left: 210px;
+}
+/*  Children’s Center */
+.node:nth-of-type(3) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 187px;
+    left: 135px;
+}
+/* Clayes Performing Arts Center */
+.node:nth-of-type(4) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 110px;
+    left: 210px;
+}
+/* Computer Science */
+.node:nth-of-type(5) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 210px;
+    left: 398px;
+}
+/* Engineering */
+.node:nth-of-type(6) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 210px;
+    left: 374px;
+}
+/* Dan Black Hall */
+.node:nth-of-type(7) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 38px;
+    left: 235px;
+}
+/*  Education-Classroom */
+.node:nth-of-type(8) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 155px;
+    left: 320px;
+}
+/*  Eastside North Parking Structure */
+.node:nth-of-type(9) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 140px;
+    left: 430px;
+}
+/*  Eastside South Parking Structure */
+.node:nth-of-type(10) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 98px;
+    left: 430px;
+}
+/* Golleher Alumni House */
+.node:nth-of-type(11) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 212px;
+    left: 100px;
+}
+/* Gastronome */
+.node:nth-of-type(12) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 255px;
+    left: 418px;
+}
+/*  Greenhouse Complex */
+.node:nth-of-type(13) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 65px;
+    left: 200px;
+}
+/* Goodwin Field */
+.node:nth-of-type(14) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 120px;
+    left: 280px;
+}
+/*  Gordon Hall */
+.node:nth-of-type(15) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 68px;
+    left: 329px;
+}
+/*  Humanities/Social Science */
+.node:nth-of-type(16) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 110px;
+    left: 332px;
+}
+/*  Housing & Residential Engagement */
+.node:nth-of-type(17) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 282px;
+    left: 442px;
+}
+/* Kinesiology & Health Science */
+.node:nth-of-type(18) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 232px;
+    left: 240px;
+}
+/*Langsdorf Hall*/
+.node:nth-of-type(19) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 32px;
+    left: 310px;
+}
+/*  Modular Complex*/
+.node:nth-of-type(20) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 13px;
+    left: 255px;
+}
+
+/*  McCarthy Hall */
+.node:nth-of-type(21) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 68px;
+    left: 269px;
+}
+/* Military Science */
+.node:nth-of-type(22) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 315px;
+    left: 332px;
+}
+/* Nutwood Parking Structure */
+.node:nth-of-type(23) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 38px;
+    left: 138px;
+}
+/* Pollak Library */
+.node:nth-of-type(24) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 172px;
+    left: 280px;
+}
+/* Ruby Gerontology Center */
+.node:nth-of-type(25) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 275px;
+    left: 370px;
+}
+/* Resident Housing */
+.node:nth-of-type(26) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 286px;
+    left: 423px;
+}
+/* State College Parking Structure */
+.node:nth-of-type(27) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 254px;
+    left: 138px;
+}
+/* Steven G. Mihaylo Hall */
+.node:nth-of-type(28) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 12px;
+    left: 349px;
+}
+/* Student Health & Counseling Center */
+.node:nth-of-type(29) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 250px;
+    left: 331px;
+}
+/* Student Recreation Center */
+.node:nth-of-type(30) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 254px;
+    left: 174px;
+}
+/* Titan House */
+.node:nth-of-type(31) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 290px;
+    left: 332px;
+}
+/* Titan Gymnasium */
+.node:nth-of-type(32) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 250px;
+    left: 250px;
+}
+/* Titan Hall */
+.node:nth-of-type(33) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 134px;
+    left: 68px;
+}
+/* Titan Stadium */
+.node:nth-of-type(34) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 145px;
+    left: 210px;
+}
+/* Titan Sports Complex */
+.node:nth-of-type(35) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 193px;
+    left: 265px;
+}
+/* Titan Softball Field */
+.node:nth-of-type(36) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 225px;
+    left: 314px;
+}
+/* Titan Student Union */
+.node:nth-of-type(37) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 182px;
+    left: 130px;
+}
+/* Titan Tennis Courts */
+.node:nth-of-type(38) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 283px;
+    left: 207px;
+}
+/* Titan Track & Field */
+.node:nth-of-type(39) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 226px;
+    left: 243px;
+}
+/* University Police */
+.node:nth-of-type(40) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 250px;
+    left: 100px;
+}
+/* Visual Arts Center */
+.node:nth-of-type(41) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 126px;
+    left: 115px;
+}
+/* Anderson Field */
+.node:nth-of-type(42) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 177px;
+    left: 298px;
+}
+/* Auxiliary Services Corporation */
+.node:nth-of-type(43) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 157px;
+    left: 48px;
+}
+/* Carl's Jr */
+.node:nth-of-type(44) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    bottom: 50px;
+    left: 344px;
+}
+/* Corporation Yard */
+.node:nth-of-type(45) {
+    position: absolute;
+    background-color: #FFD700;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 268px;
+    left: 105px;
+}
+
+
+
