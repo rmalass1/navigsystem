@@ -7,57 +7,226 @@
 </head>
 
 <body>
-    <div class="map-container">
-        <img src="{{url_for('static', filename='calstate.jpg') }}" class="map-background" />
+    <section class="wrapper">
+        <div class="map-container">
+            <img src="{{url_for('static', filename='calstate.jpg') }}" class="map-background" />
 
-        <!-- Add the nodes on the map-->
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
+            <!-- Add the nodes on the map-->
+            <div id="AD" class="node"></div>
+            <div id="B" class="node"></div>
+            <div id="CC" class="node"></div>
+            <div id="CPAC" class="node"></div>
+            <div id="CS" class="node"></div>
+            <div id="E" class="node"></div>
+            <div id="DBH" class="node"></div>
+            <div id="EC" class="node"></div>
+            <div id="ENPS" class="node"></div>
+            <div id="ESPS" class="node"></div>
+            <div id="GAH" class="node"></div>
+            <div id="GAS" class="node"></div>
+            <div id="GC" class="node"></div>
+            <div id="GF" class="node"></div>
+            <div id="GH" class="node"></div>
+            <div id="H" class="node"></div>
+            <div id="HRE" class="node"></div>
+            <div id="KHS" class="node"></div>
+            <div id="LH" class="node"></div>
+            <div id="MC" class="node"></div>
+            <div id="MH" class="node"></div>
+            <div id="MS" class="node"></div>
+            <div id="NPS" class="node"></div>
+            <div id="PL" class="node"></div>
+            <div id="RG" class="node"></div>
+            <div id="RH" class="node"></div>
+            <div id="SCPS" class="node"></div>
+            <div id="SGMH" class="node"></div>
+            <div id="SHCC" class="node"></div>
+            <div id="SRC" class="node"></div>
+            <div id="T" class="node"></div>
+            <div id="TG" class="node"></div>
+            <div id="TH" class="node"></div>
+            <div id="TS" class="node"></div>
+            <div id="TSC" class="node"></div>
+            <div id="TSF" class="node"></div>
+            <div id="TSU" class="node"></div>
+            <div id="TTC" class="node"></div>
+            <div id="TTF" class="node"></div>
+            <div id="UP" class="node"></div>
+            <div id="VA" class="node"></div>
+            <div id="AF" class="node"></div>
+            <div id="ASC" class="node"></div>
+            <div id="CJ" class="node"></div>
+            <div id="CY" class="node"></div>
+        </div>
+        <!-- Select the start and end node-->
+        <form action="/find_path" method="post" id="path-form">
+            <div class="node-choice">
+                <label for="start">Start Node:</label>
+                <select name="start" id="start">
+                    <option value="AD">Admissions Office</option>
+                    <option value="AF">Anderson Field</option>
+                    <option value="ASC">Auxiliary Services Corporation</option>
+                    <option value="B">Bookstore/Titan Shop</option>
+                    <option value="CC">Children's Center</option>
+                    <option value="CJ">Carl's Jr.</option>
+                    <option value="CPAC">Clayes Performing Arts Center</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="CY">Corporation Yard</option>
+                    <option value="DBH">Dan Black Hall</option>
+                    <option value="E">Engineering</option>
+                    <option value="EC">Education Classroom</option>
+                    <option value="ENPS">Eastside North Parking Structure</option>
+                    <option value="ESPS">Eastside South Parking Structure</option>
+                    <option value="GAH">Golleher Alumni House</option>
+                    <option value="GAS">Gastronome</option>
+                    <option value="GC">Greenhouse Complex</option>
+                    <option value="GF">Goodwin Field</option>
+                    <option value="GH">Gordon Hall</option>
+                    <option value="H">Humanities/Social Sciences</option>
+                    <option value="HRE">Housing & Residential Engagement</option>
+                    <option value="KHS">Kinesiology & Health Sciences</option>
+                    <option value="LH">Langsdorf Hall</option>
+                    <option value="MC">Modular Complex</option>
+                    <option value="MH">McCarthy Hall</option>
+                    <option value="MS">Military Science</option>
+                    <option value="NPS">Nutwood Parking Structure</option>
+                    <option value="PL">Pollak Library</option>
+                    <option value="RG">Ruby Gerontology Center</option>
+                    <option value="RH">Resident Housing</option>
+                    <option value="SCPS">State College Parking Structure</option>
+                    <option value="SGMH">Steven G. Mihaylo Hall</option>
+                    <option value="SHCC">Student Health & Counseling Center</option>
+                    <option value="SRC">Student Recreation Center</option>
+                    <option value="T">Titan House</option>
+                    <option value="TG">Titan Gymnasium</option>
+                    <option value="TH">Titan Hall</option>
+                    <option value="TS">Titan Stadium</option>
+                    <option value="TSC">Titan Sports Complex</option>
+                    <option value="TSF">Titan Softball Field</option>
+                    <option value="TSU">Titan Student Union</option>
+                    <option value="TTC">Titan Tennis Courts</option>
+                    <option value="TTF">Titan Track & Field</option>
+                    <option value="UP">University Police</option>
+                    <option value="VA">Visual Arts Center</option>
 
-    </div>
+                </select>
+            </div>
+            <div class="node-choice">
+                <label for="end">End Node:</label>
+                <select name="end" id="end">
+                    <option value="AD">Admissions Office</option>
+                    <option value="AF">Anderson Field</option>
+                    <option value="ASC">Auxiliary Services Corporation</option>
+                    <option value="B">Bookstore/Titan Shop</option>
+                    <option value="CC">Children's Center</option>
+                    <option value="CJ">Carl's Jr.</option>
+                    <option value="CPAC">Clayes Performing Arts Center</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="CY">Corporation Yard</option>
+                    <option value="DBH">Dan Black Hall</option>
+                    <option value="E">Engineering</option>
+                    <option value="EC">Education Classroom</option>
+                    <option value="ENPS">Eastside North Parking Structure</option>
+                    <option value="ESPS">Eastside South Parking Structure</option>
+                    <option value="GAH">Golleher Alumni House</option>
+                    <option value="GAS">Gastronome</option>
+                    <option value="GC">Greenhouse Complex</option>
+                    <option value="GF">Goodwin Field</option>
+                    <option value="GH">Gordon Hall</option>
+                    <option value="H">Humanities/Social Sciences</option>
+                    <option value="HRE">Housing & Residential Engagement</option>
+                    <option value="KHS">Kinesiology & Health Sciences</option>
+                    <option value="LH">Langsdorf Hall</option>
+                    <option value="MC">Modular Complex</option>
+                    <option value="MH">McCarthy Hall</option>
+                    <option value="MS">Military Science</option>
+                    <option value="NPS">Nutwood Parking Structure</option>
+                    <option value="PL">Pollak Library</option>
+                    <option value="RG">Ruby Gerontology Center</option>
+                    <option value="RH">Resident Housing</option>
+                    <option value="SCPS">State College Parking Structure</option>
+                    <option value="SGMH">Steven G. Mihaylo Hall</option>
+                    <option value="SHCC">Student Health & Counseling Center</option>
+                    <option value="SRC">Student Recreation Center</option>
+                    <option value="T">Titan House</option>
+                    <option value="TG">Titan Gymnasium</option>
+                    <option value="TH">Titan Hall</option>
+                    <option value="TS">Titan Stadium</option>
+                    <option value="TSC">Titan Sports Complex</option>
+                    <option value="TSF">Titan Softball Field</option>
+                    <option value="TSU">Titan Student Union</option>
+                    <option value="TTC">Titan Tennis Courts</option>
+                    <option value="TTF">Titan Track & Field</option>
+                    <option value="UP">University Police</option>
+                    <option value="VA">Visual Arts Center</option>
+                </select>
+            </div>
+
+            <button type="submit">Find Path</button>
+        </form>
+    </section>
+
+    <!-- JavaScript to draw the path -->
+    <script>
+        // Function to handle form submission
+        document.getElementById('path-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Get start and end values from the form
+            const startNode = document.getElementById('start').value;
+            const endNode = document.getElementById('end').value;
+
+            // Send start and end nodes to the server
+            const response = await fetch('/find_path', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ start: startNode, end: endNode })
+            });
+
+            // Get JSON response
+            const data = await response.json();
+
+            // Draw the path on the map
+            drawPath(data.path);
+        });
+
+        // Function to draw the path by creating lines between nodes
+        function drawPath(path) {
+            const mapContainer = document.querySelector('.map-container');
+
+            // Clear any existing lines
+            document.querySelectorAll('.edge').forEach(edge => edge.remove());
+
+            // Loop through the path and create edges
+            for (let i = 0; i < path.length - 1; i++) {
+                const startNode = document.getElementById(path[i]);
+                const endNode = document.getElementById(path[i + 1]);
+
+                // Get positions of start and end nodes
+                const startX = startNode.offsetLeft + startNode.offsetWidth / 2.8;
+                const startY = startNode.offsetTop + startNode.offsetHeight / 2.8;
+                const endX = endNode.offsetLeft + endNode.offsetWidth / 2.8;
+                const endY = endNode.offsetTop + endNode.offsetHeight / 2.8;
+
+                // Create a line element
+                const line = document.createElement('div');
+                line.className = 'edge';
+                line.style.position = 'absolute';
+                line.style.width = Math.hypot(endX - startX, endY - startY) + 'px';
+                line.style.height = '3px';
+                line.style.backgroundColor = 'red';
+                line.style.transformOrigin = '0 0';
+                line.style.transform = `rotate(${Math.atan2(endY - startY, endX - startX)}rad)`;
+                line.style.left = startX + 'px';
+                line.style.top = startY + 'px';
+
+                // Append the line to the map container
+                mapContainer.appendChild(line);
+            }
+        }
+    </script>
 </body>
 
 </html>
