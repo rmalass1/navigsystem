@@ -162,16 +162,18 @@
                 </select>
             </div>
 
-            <button type="submit">Find Path</button>
+            <!-- Buttons to select the algorithm -->
+            <button type="button" onclick="FindPath('dijkstra')">The Path Using Dijkstra's Algorithm</button>
+            <button type="button" onclick="FindPath('dfs')">The Path Using Depth-First Search</button>
+            <button type="button" onclick="FindPath('bfs')">The Path Using Breadth-First Search</button>
+
         </form>
     </section>
 
-    <!-- JavaScript to draw the path -->
+    <!-- JavaScript to handle path finding -->
     <script>
         // Function to handle form submission
-        document.getElementById('path-form').addEventListener('submit', async (event) => {
-            event.preventDefault();
-
+        async function FindPath(algorithm) {
             // Get start and end values from the form
             const startNode = document.getElementById('start').value;
             const endNode = document.getElementById('end').value;
@@ -182,7 +184,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ start: startNode, end: endNode })
+                body: JSON.stringify({ start: startNode, end: endNode, algorithm: algorithm })
             });
 
             // Get JSON response
@@ -190,41 +192,75 @@
 
             // Draw the path on the map
             drawPath(data.path);
-        });
+        }
 
         // Function to draw the path by creating lines between nodes
-        function drawPath(path) {
+        async function drawPath(path) {
             const mapContainer = document.querySelector('.map-container');
 
             // Clear any existing lines
             document.querySelectorAll('.edge').forEach(edge => edge.remove());
+
+            // Get container's bounding rectangle for relative positioning
+            const containerRect = mapContainer.getBoundingClientRect();
 
             // Loop through the path and create edges
             for (let i = 0; i < path.length - 1; i++) {
                 const startNode = document.getElementById(path[i]);
                 const endNode = document.getElementById(path[i + 1]);
 
+                // Calculate the position and dimensions of the line
+                const startRect = startNode.getBoundingClientRect();
+                const endRect = endNode.getBoundingClientRect();
+
                 // Get positions of start and end nodes
-                const startX = startNode.offsetLeft + startNode.offsetWidth / 2.8;
-                const startY = startNode.offsetTop + startNode.offsetHeight / 2.8;
-                const endX = endNode.offsetLeft + endNode.offsetWidth / 2.8;
-                const endY = endNode.offsetTop + endNode.offsetHeight / 2.8;
+                const startX = startRect.left + startRect.width / 2 - containerRect.left;
+                const startY = startRect.top + startRect.height / 2 - containerRect.top;
+                const endX = endRect.left + endRect.width / 2 - containerRect.left;
+                const endY = endRect.top + endRect.height / 2 - containerRect.top;
+
+                const distance = Math.sqrt((endX - startX)**2 + (endY - startY)**2);
+                const angle = Math.atan2(endY - startY, endX - startX) * (180 / Math.PI);
 
                 // Create a line element
                 const line = document.createElement('div');
                 line.className = 'edge';
                 line.style.position = 'absolute';
-                line.style.width = Math.hypot(endX - startX, endY - startY) + 'px';
+                line.style.width = distance + 'px';
                 line.style.height = '3px';
-                line.style.backgroundColor = 'red';
-                line.style.transformOrigin = '0 0';
-                line.style.transform = `rotate(${Math.atan2(endY - startY, endX - startX)}rad)`;
+                line.style.backgroundColor = 'green';
+                line.style.border = "1px solid black"
                 line.style.left = startX + 'px';
                 line.style.top = startY + 'px';
+                line.style.transformOrigin = '0 0';
+                line.style.transform = `rotate(${ angle }deg)`;
 
                 // Append the line to the map container
                 mapContainer.appendChild(line);
+
+                // Animate the line appearing by changing opacity and width
+                await animateLine(line, distance);
             }
+        }
+        //function to animate each line
+        function animateLine(line, distance) {
+            //set a constant speed
+            const speed = 100;
+            //calculate the duration based on the distance
+            const duration = distance / speed;
+
+            return new Promise(resolve => {
+                line.style.transition = `width ${duration}s linear`;
+                line.style.width = '0px'; // Start width from 0px
+                line.style.opacity = '1';
+
+                requestAnimationFrame(() => {
+                    line.style.width = `${distance}px`;
+                });
+
+                
+                setTimeout(resolve, duration * 1000); // Wait for the animation to finish
+            });
         }
     </script>
 </body>
